@@ -1,0 +1,238 @@
+:root {
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;  
+    --text-primary: #e0e0e0; 
+    --text-secondary: #a0a0a0; 
+    --accent-color: #00f2fe; 
+    --accent-secondary: #4facfe;
+    --main-font: 'Montserrat', sans-serif;
+    --shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--main-font);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.main-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-header {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    border: 1px solid #444;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.profile-frame {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name-title h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -1px;
+}
+
+.name-title h2 {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header-contact {
+    text-align: right;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.btn-contact {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: var(--accent-color);
+    color: #1a1a1a;
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    border: 1px solid #3d3d3d;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent-color), var(--accent-secondary));
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.timeline-marker {
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    margin-top: 8px;
+    z-index: 2;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 20px;
+    width: 2px;
+    height: calc(100% + 10px);
+    background-color: #444;
+    z-index: 1;
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+.timeline-content h4 {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.company {
+    color: var(--accent-secondary);
+    font-weight: 600;
+    display: block;
+}
+
+.date {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    background-color: rgba(255,255,255,0.05);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: rgba(79, 172, 254, 0.1);
+    color: var(--accent-secondary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(79, 172, 254, 0.3);
+}
+
+.edu-item {
+    margin-bottom: 15px;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 850px) {
+    .content-grid {
+        grid-template-columns: 1fr; /
+    }
+    
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+    }
+    
+    .header-contact {
+        text-align: center;
+    }
+}
